@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-White: hsl(0, 0%, 100%);
+  --color-Light-pink: hsl(275, 100%, 97%);
+  --color-Grayish-purple: hsl(292, 16%, 49%);
+  --color-Dark-purple: hsl(292, 42%, 14%);
+  --color-bright-purple: hsl(281, 83%, 54%);
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  width: 100%;
+}
+h1,
+h3 {
+  color: var(--color-Dark-purple);
+}
+p {
+  color: var(--color-Grayish-purple);
+}
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: var(--color-Light-pink);
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: grid;
+  place-items: center;
+}
+
+/* accordion styles */
+.accordion {
+  background-color: var(--color-White);
+  width: min(90%, 550px);
+  padding: 2em;
+  border-radius: 0.5em;
+}
+.accordion__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  margin-bottom: 1rem;
+}
+.accordion__heading img {
+  width: clamp(1.5rem, 3vw + 1rem, 3rem);
+}
+
+/* question styles  */
+.question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+.question {
+  font-size: 1rem;
+  margin-block: 1.5em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.question:hover {
+  color: var(--color-bright-purple);
+}
+
+.displayAnswerIcon {
+  display: grid;
+  place-items: center;
+  transition: 0.1s;
+}
+.displayAnswerIcon:hover {
+  transform: scale(1.15);
+}
+.displayAnswerIcon:focus {
+  outline: 4px solid var(--color-bright-purple);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+/* answer styles */
+.answer {
+  padding-bottom: 1.5em;
+}
+
+hr {
+  opacity: 0.1;
+}
+
+/* utility classes */
+
+.d-none {
+  display: none;
+}
+
+@media only screen and (min-width: 650px) {
+  main {
+    width: 100%;
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  }
+}
